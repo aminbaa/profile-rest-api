@@ -31,8 +31,20 @@ class HelloApiView(APIView):
         else:
             return Response(
                 serializer.errors,
-                status=status.HTTP_400_bad_request,
+                status=status.HTTP_400_BAD_REQUEST
             )
+
+    def put(self, request, pk=None):
+        """Handle Updating an object"""
+        return Response({'Method': 'Put'})
+
+    def patch(self, request, pk=None):
+        """Handle a partial update of an object"""
+        return Response({'Method': 'Patch'})
+
+    def delete(self, request, pk=None):
+        """Delete an object"""
+        return Response({'Method': 'Delete'})
 
 
 
